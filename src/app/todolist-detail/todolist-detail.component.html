@@ -1,0 +1,24 @@
+<h1>{{todolist.title}}</h1>
+<table class="table table-hover table-striped">
+<thead>
+<tr>
+  <th>Naam</th>
+  <th>Deadline</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let item of (todolist.items)"
+    data-toggle="collapse" [attr.data-target]="'#' + item.title.replace(' ','')" aria-expanded="false" [attr.aria-controls]="item.title.replace(' ','')">
+
+  <td>{{item.title}}
+    <span class="collapse" [id]="item.title.replace(' ', '')">
+      <br>
+      {{item.description}}
+    </span>
+  </td>
+  <td>{{item.date | date : 'longDate'}}</td>
+</tr>
+
+</tbody>
+</table>
+

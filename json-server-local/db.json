@@ -1,0 +1,88 @@
+{
+  "todolists": [
+    {
+      "id": 1,
+      "title": "School",
+      "color": "#afdeee",
+      "textcolor": "#000000"
+    },
+    {
+      "id": 2,
+      "title": "Home",
+      "color": "#eab48d",
+      "textcolor": "#000000"
+    },
+    {
+      "id": 3,
+      "title": "Minecraft",
+      "color": "#eab48d",
+      "textcolor": "#000000"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "todolistId": 1,
+      "title": "Cisco assignment",
+      "description": "Chapter test 2",
+      "date": "2021-10-30T22:00:00.000Z",
+      "statusId": 1,
+      "order": 1
+    },
+    {
+      "id": 2,
+      "todolistId": 2,
+      "title": "Cleaning",
+      "description": "The windows need some cleaning",
+      "date": "2021-10-26T22:00:00.000Z",
+      "statusId": 1,
+      "order": 1
+    },
+    {
+      "id": 3,
+      "todolistId": 1,
+      "title": "Mobile Development",
+      "description": "Deadline to upload project description and team",
+      "date": "2021-10-24T22:00:00.000Z",
+      "statusId": 1,
+      "order": 2
+    },
+    {
+      "id": 4,
+      "todolistId": 3,
+      "title": "Pumpkin farms",
+      "description": "Maak meer pumpkin farms",
+      "date": "2021-10-26T22:00:00.000Z",
+      "statusId": 1,
+      "order": 1
+    },
+    {
+      "id": 5,
+      "todolistId": 3,
+      "title": "Honey farm",
+      "description": "Vergroot honey farm",
+      "date": "2021-10-26T22:00:00.000Z",
+      "statusId": 1,
+      "order": 1
+    },
+    {
+      "id": 6,
+      "todolistId": 3,
+      "title": "Nether wart",
+      "description": "Vind nether wart",
+      "date": "2021-10-26T22:00:00.000Z",
+      "statusId": 1,
+      "order": 1
+    }
+  ],
+  "statuses": [
+    {
+      "id": 1,
+      "name": "ongoing"
+    },
+    {
+      "id": 2,
+      "name": "done"
+    }
+  ]
+}
