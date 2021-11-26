@@ -1,33 +1,30 @@
 {
   "todolists": [
     {
-      "id": 1,
       "title": "School",
-      "color": "#afdeee",
-      "textcolor": "#000000"
+      "color": "info",
+      "id": 1
     },
     {
-      "id": 2,
       "title": "Home",
-      "color": "#eab48d",
-      "textcolor": "#000000"
+      "color": "secondary",
+      "id": 2
     },
     {
       "id": 3,
       "title": "Minecraft",
-      "color": "#eab48d",
-      "textcolor": "#000000"
+      "color": "danger"
     }
   ],
   "items": [
     {
-      "id": 1,
-      "todolistId": 1,
       "title": "Cisco assignment",
-      "description": "Chapter test 2",
+      "description": "Chapter test 4",
       "date": "2021-10-30T22:00:00.000Z",
-      "statusId": 1,
-      "order": 1
+      "todolistId": 1,
+      "done": 0,
+      "order": 1,
+      "id": 1
     },
     {
       "id": 2,
@@ -35,7 +32,7 @@
       "title": "Cleaning",
       "description": "The windows need some cleaning",
       "date": "2021-10-26T22:00:00.000Z",
-      "statusId": 1,
+      "done": 0,
       "order": 1
     },
     {
@@ -44,45 +41,35 @@
       "title": "Mobile Development",
       "description": "Deadline to upload project description and team",
       "date": "2021-10-24T22:00:00.000Z",
-      "statusId": 1,
+      "done": 0,
       "order": 2
     },
     {
-      "id": 4,
-      "todolistId": 3,
-      "title": "Pumpkin farms",
+      "title": "Test",
       "description": "Maak meer pumpkin farms",
-      "date": "2021-10-26T22:00:00.000Z",
-      "statusId": 1,
-      "order": 1
-    },
-    {
-      "id": 5,
+      "date": "2021-12-31",
       "todolistId": 3,
-      "title": "Honey farm",
-      "description": "Vergroot honey farm",
-      "date": "2021-10-26T22:00:00.000Z",
-      "statusId": 1,
-      "order": 1
+      "done": 0,
+      "order": 3,
+      "id": 4
     },
     {
       "id": 6,
       "todolistId": 3,
       "title": "Nether wart",
-      "description": "Vind nether wart",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu erat et massa accumsan blandit. Proin justo turpis, porttitor eu ullamcorper eu, accumsan id enim.",
       "date": "2021-10-26T22:00:00.000Z",
-      "statusId": 1,
-      "order": 1
-    }
-  ],
-  "statuses": [
-    {
-      "id": 1,
-      "name": "ongoing"
+      "done": 0,
+      "order": 3
     },
     {
-      "id": 2,
-      "name": "done"
+      "title": "test",
+      "description": "tet",
+      "date": "2021-11-27",
+      "todolistId": 3,
+      "done": 0,
+      "order": 0,
+      "id": 7
     }
   ]
 }

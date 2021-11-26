@@ -1,0 +1,43 @@
+<div class="alert alert-danger" role="alert" *ngIf="isSubmitted && errorMessage">
+{{errorMessage}}
+</div>
+<div class="alert alert-warning" role="warning">
+  <p>Form Status: {{ todolistForm.status }}</p>
+</div>
+<form (ngSubmit)="onSubmit()" [formGroup]="todolistForm">
+  <div class="form-group">
+    <label for="title">Titel:</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="Titel" formControlName="title" minlength="2">
+  </div>
+  <div class="form-group">
+    <p>Keur:</p>
+    <input type="radio" class="btn-check" name="color" value="primary" formControlName="color" id="primary" autocomplete="off" />
+    <label class="btn btn-primary" for="primary">{{todolistForm.value.title}}</label>
+
+    <input type="radio" class="btn-check" name="color" value="secondary" formControlName="color"  id="secondary" autocomplete="off" />
+    <label class="btn btn-secondary" for="secondary">{{todolistForm.value.title}}</label>
+
+    <input type="radio" class="btn-check" name="color" value="success" formControlName="color" id="success" autocomplete="off" />
+    <label class="btn btn-success" for="success">{{todolistForm.value.title}}</label>
+
+    <input type="radio" class="btn-check" name="color" value="danger" formControlName="color" id="danger" autocomplete="off" />
+    <label class="btn btn-danger" for="danger">{{todolistForm.value.title}}</label>
+
+    <input type="radio" class="btn-check" name="color" value="info" formControlName="color" id="info" autocomplete="off" />
+    <label class="btn btn-info" for="info">{{todolistForm.value.title}}</label>
+
+    <input type="radio" class="btn-check" name="color" value="warning" formControlName="color" id="warning" autocomplete="off" />
+    <label class="btn btn-warning" for="warning">{{todolistForm.value.title}}</label>
+
+    <input type="radio" class="btn-check" name="color" value="dark" formControlName="color" id="dark" autocomplete="off" />
+    <label class="btn btn-dark" for="dark">{{todolistForm.value.title}}</label>
+
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-success" *ngIf="isAdd" [disabled]="!todolistForm.valid">Voeg toe</button>
+    <button type="submit" class="btn btn-success" *ngIf="isEdit" [disabled]="!todolistForm.valid">Opslaan</button>
+    <a routerLink="">
+      <button class="btn btn-grey">Terug</button>
+    </a>
+  </div>
+</form>

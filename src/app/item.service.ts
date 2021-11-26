@@ -28,11 +28,12 @@ export class ItemService {
   putItem(id:number, category: Item): Observable<Item> {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-
+    console.log('test4')
     return this.httpClient.put<Item>("http://localhost:3000/items/" + id, category, {headers: headers});
   }
 
   deleteItem(id: number): Observable<Item> {
+    console.log('Deleting item with id:' + id)
     return this.httpClient.delete<Item>("http://localhost:3000/items/" + id);
   }
 }

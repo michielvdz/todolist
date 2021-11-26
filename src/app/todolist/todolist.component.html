@@ -1,8 +1,29 @@
-<div *ngIf="todolist" class="card" style="width: 18rem;" (click)="detail(todolist.id)">
-  <div class="card-header bg-primary text-white">
-    <h3 class="card-title">{{todolist.title}}</h3>
+
+  <div *ngIf="todolist" class="card my-2 ml-0" style="width: 18rem; min-height: 200px; max-height: 200px" (click)="detail(todolist.id)">
+    <div [class]="'modal-header  text-white bg-' + todolist.color">
+      <h3 class="card-title" (click)="edit(todolist.id); $event.stopPropagation()">
+        {{todolist.title}}
+        <sup><i class="fas fa-pencil-alt"></i></sup>
+      </h3>
+        <button type="button" class="close text-white"
+                (click)="showAlert(todolist.id,todolist.title); $event.stopPropagation()">
+          <i class="fas fa-times-circle"></i>
+        </button>
+    </div>
+
+
+
+
+      <ul class="list-group list-group-flush" *ngFor="let item of (todolist.items.slice(0,2))">
+        <li class="list-group-item ">{{item.title}}</li>
+      </ul>
+      <ul class="list-group list-group-flush" *ngIf="todolist.items.length>3">
+        <li class="list-group-item schaduuw">{{todolist.items[2].title}}</li>
+
+      </ul>
+
+
   </div>
-    <ul class="list-group list-group-flush" *ngFor="let item of (todolist.items)">
-      <li class="list-group-item">{{item.title}}</li>
-    </ul>
-</div>
+
+
+

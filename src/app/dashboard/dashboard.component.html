@@ -1,5 +1,14 @@
-<h1>Todolijsten:</h1>
-<div class="row">
-  <app-todolist class="col-sm-12 col-md-12, col-lg-6, col-xl-4  d-flex align-items-stretch"
-                *ngFor="let todolist of (todolists$ | async)" [todolist]="todolist"></app-todolist>
+<h1>Todolists:</h1>
+<div *ngIf="alert" class="alert alert-danger modal-footer" role="alert">
+  <p>Ben je zeker dat je de todolijst "{{todolistTitle}}" wilt verwijderen?</p>
+  <br>
+  <button class="btn btn-success" (click)="delete(); hideAlert(); $event.stopPropagation()">JA</button>
+  <button class="btn btn-danger" (click)="hideAlert(); $event.stopPropagation()">NEE</button>
 </div>
+<div class="row d-flex justify-content-between">
+  <app-todolist class="col-sm-12 col-md-6 col-lg-4 col-xl-4"
+                *ngFor="let todolist of (todolists$ | async)" [todolist]="todolist">
+  </app-todolist>
+
+</div>
+
