@@ -29,6 +29,10 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './menu/menu.component';
+import {DataTablesModule} from 'angular-datatables';
+import {MDBBootstrapModule} from "angular-bootstrap-md";
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 
 
 @NgModule({
@@ -40,6 +44,8 @@ import { MenuComponent } from './menu/menu.component';
     ItemFormComponent,
     TodolistFormComponent,
     MenuComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -62,7 +68,11 @@ import { MenuComponent } from './menu/menu.component';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DataTablesModule,
+    MDBBootstrapModule,
+    DragDropModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

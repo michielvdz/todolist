@@ -1,54 +1,49 @@
+
+
+
 <h1>
   {{todolist.title}}
 </h1>
 
-<!--Delete Alert-->
-<div *ngIf="alert" class="alert alert-danger modal-footer" role="alert">
-  <p>Ben je zeker dat je het item "{{itemTitle}}"  wilt verwijderen?</p>
-  <br>
-  <button class="btn btn-success" (click)="delete(); hideAlert()">JA</button>
-  <button class="btn btn-danger" (click)="hideAlert()">NEE</button>
+
+<div class="table-responsive">
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover ">
+    <thead [class]="'text-white bg-' + todolist.color">
+    <tr>
+      <th>Name</th>
+      <th>Deadline</th>
+      <th class="pointer text-center" (click)="add()">
+        Add task <i class="fas fa-plus"></i>
+      </th>
+
+    </tr>
+    </thead>
+    <tbody cdkDropList (cdkDropListDropped)="onDrop($event)">
+    <tr *ngFor="let item of (items)" cdkDrag cdkDragLockAxis="y">
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" (click)="done(item)" [checked]="item.done" value=""
+                 id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            {{item.title}}
+          </label>
+        </div>
+      </td>
+      <td>{{item.date | date : 'EEEE dd/MM/y'}}</td>
+      <td class="text-center" data-toggle="modal" [attr.data-target]="'#itemModal'+item.id" (click)="hideAlert()">
+        <i class="fas fa-ellipsis-h"></i>
+      </td>
+
+    </tr>
+
+    </tbody>
+  </table>
 </div>
 
 
-<table class="table table-hover">
-  <thead [class]="'text-white bg-' + todolist.color">
-  <tr>
-    <th>Naam</th>
-    <th>Deadline</th>
-    <th class="pointer" (click)="add()">
-        Extra taak <i class="fas fa-plus"></i>
-    </th>
-
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let item of (todolist.items)" data-toggle="modal" [attr.data-target]="'#itemModal'+item.id">
-    <td>{{item.title}}</td>
-    <td>{{item.date | date : 'EEEE dd/MM/y'}}</td>
-    <td>
-      <div class="row">
-        <div class="col-lg-2 col-md-3">
-          <button class="btn btn-success" (click)="edit(item.id); $event.stopPropagation()">
-            <i class="fas fa-pencil-alt"></i>
-          </button>
-        </div>
-        <div class="col-lg-2 col-md-3">
-          <button class="btn btn-danger" (click)="showAlert(item.id, itemTitle); $event.stopPropagation()" id="test">
-            <i class="fas fa-trash-alt "></i>
-          </button>
-        </div>
-      </div>
-    </td>
-
-  </tr>
-  </tbody>
-</table>
-
-
-
-<div *ngFor="let item of (todolist.items)" class="modal fade"
-     [id]="'itemModal'+item.id" tabindex="-1" role="dialog" [attr.aria-labelledby]="'itemModalLabel'+itemId" aria-hidden="true">
+<div *ngFor="let item of (items)" class="modal fade"
+     [id]="'itemModal'+item.id" tabindex="-1" role="dialog" [attr.aria-labelledby]="'itemModalLabel'+itemId"
+     aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div [class]="'modal-header text-white bg-' + todolist.color">
@@ -58,13 +53,31 @@
         </button>
       </div>
       <div class="modal-body">
-        <h6><b>Omschrijving:</b></h6>
+        <h6><b>Description:</b></h6>
         <p>{{item.description}}</p>
         <h6><b>Deadline:</b></h6>
         <p>{{item.date | date : 'EEEE dd/MM/y'}}</p>
+        <div class="modal-footer">
+          <div class="col-lg-2 col-md-3">
+            <button class="btn btn-success" (click)="edit(item.id); hideAlert()" data-dismiss="modal">
+              <i class="fas fa-pencil-alt"></i>
+            </button>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button class="btn btn-danger" (click)="showAlert(item.id, itemTitle)">
+              <i class="fas fa-trash-alt "></i>
+            </button>
+          </div>
+        </div>
+        <div *ngIf="alert" role="alert" class="alert alert-danger">
+            <p>Are you sure you want to delete item "{{item.title}}"?</p>
+          <div class="modal-footer">
+            <button class="btn btn-success" (click)="delete(item.id); hideAlert()" data-toggle="modal" [attr.data-target]="'#itemModal'+item.id">YES</button>
+            <button class="btn btn-danger"  (click)="hideAlert()">NO</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 

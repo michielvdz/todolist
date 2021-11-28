@@ -7,7 +7,7 @@
     },
     {
       "title": "Home",
-      "color": "secondary",
+      "color": "success",
       "id": 2
     },
     {
@@ -22,7 +22,7 @@
       "description": "Chapter test 4",
       "date": "2021-10-30T22:00:00.000Z",
       "todolistId": 1,
-      "done": 0,
+      "done": false,
       "order": 1,
       "id": 1
     },
@@ -32,44 +32,62 @@
       "title": "Cleaning",
       "description": "The windows need some cleaning",
       "date": "2021-10-26T22:00:00.000Z",
-      "done": 0,
-      "order": 1
+      "done": true,
+      "order": 0
     },
     {
-      "id": 3,
-      "todolistId": 1,
-      "title": "Mobile Development",
+      "title": "Mobile",
       "description": "Deadline to upload project description and team",
       "date": "2021-10-24T22:00:00.000Z",
-      "done": 0,
-      "order": 2
+      "todolistId": 1,
+      "done": true,
+      "order": 0,
+      "id": 3
     },
     {
-      "title": "Test",
-      "description": "Maak meer pumpkin farms",
-      "date": "2021-12-31",
+      "title": "Nether wart",
+      "description": "Nether wart verzamelen",
+      "date": "2021-12-12",
       "todolistId": 3,
       "done": 0,
       "order": 3,
-      "id": 4
+      "id": 6
     },
     {
-      "id": 6,
+      "title": "Appel",
+      "description": "Appel farm buiten base",
+      "date": "2021-12-31",
       "todolistId": 3,
-      "title": "Nether wart",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu erat et massa accumsan blandit. Proin justo turpis, porttitor eu ullamcorper eu, accumsan id enim.",
-      "date": "2021-10-26T22:00:00.000Z",
-      "done": 0,
-      "order": 3
-    },
-    {
-      "title": "test",
-      "description": "tet",
-      "date": "2021-11-27",
-      "todolistId": 3,
-      "done": 0,
+      "done": 1,
       "order": 0,
-      "id": 7
+      "id": 9
+    },
+    {
+      "title": "Test88",
+      "description": "Test88",
+      "date": "2021-12-02",
+      "todolistId": 3,
+      "done": true,
+      "order": 2,
+      "id": 10
+    },
+    {
+      "title": "Watering Plants",
+      "description": "Water plants at front garden",
+      "date": "2021-12-05",
+      "todolistId": 2,
+      "done": 0,
+      "order": 1,
+      "id": 11
+    },
+    {
+      "title": "Chicken",
+      "description": "Make chicken farm",
+      "date": "2021-12-03",
+      "todolistId": 3,
+      "done": 0,
+      "order": 1,
+      "id": 12
     }
   ]
 }

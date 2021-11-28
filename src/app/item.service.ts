@@ -10,8 +10,8 @@ export class ItemService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getItems(): Observable<Item[]> {
-    return this.httpClient.get<Item[]>("http://localhost:3000/items");
+  getItems(todoId: string | null): Observable<Item[]> {
+    return this.httpClient.get<Item[]>("http://localhost:3000/items?_sort=order&_order=asc&todolistId="+todoId);
   }
 
   getItemById(id: number): Observable<Item> {
@@ -28,7 +28,6 @@ export class ItemService {
   putItem(id:number, category: Item): Observable<Item> {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    console.log('test4')
     return this.httpClient.put<Item>("http://localhost:3000/items/" + id, category, {headers: headers});
   }
 

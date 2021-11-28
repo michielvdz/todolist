@@ -29,7 +29,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
     description: new FormControl('', [Validators.required]),
     date: new FormControl('', [Validators.required]),
     todolistId: new FormControl(0),
-    statusId: new FormControl(1),
+    done: new FormControl(0),
     order: new FormControl(0),
 
   });
@@ -84,7 +84,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
           description: result.description,
           date: result.date,
           todolistId: this.todoId,
-          statusId: result.statusId,
+          done: result.done,
           order: result.order,
 
         });

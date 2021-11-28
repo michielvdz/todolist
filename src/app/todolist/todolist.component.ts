@@ -4,6 +4,8 @@ import { Todolist } from '../todolist';
 import { TodolistService } from '../todolist.service';
 import {Subscription} from "rxjs";
 import {DashboardComponent} from '../dashboard/dashboard.component'
+import {ItemService} from "../item.service";
+import {Item} from "../item";
 
 
 @Component({
@@ -14,19 +16,17 @@ import {DashboardComponent} from '../dashboard/dashboard.component'
 export class TodolistComponent implements OnInit {
 
   @Input() todolist: Todolist = {id: 0, title: "", color: "", items:[]};
-  todolists: Todolist[] = [];
-  alert: boolean = false;
-  deleteTodoId: number = 0
-  todolistTitle: string = '';
 
   todolists$: Subscription = new Subscription();
-  deleteTodolist$: Subscription = new Subscription();
-  private errorMessage: string = '';
+  items: Item[] = []
 
-  constructor(private router: Router, private todolistService: TodolistService, private dashboardComponent: DashboardComponent) { }
+  constructor(private router: Router,
+              private todolistService: TodolistService,
+              private dashboardComponent: DashboardComponent,
+              private itemService: ItemService) { }
 
   ngOnInit(): void {
-    this.getTodolists(1)
+    this.getItems()
   }
 
   detail(id: number) {
@@ -35,7 +35,6 @@ export class TodolistComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.todolists$.unsubscribe();
-    this.deleteTodolist$.unsubscribe();
   }
 
 
@@ -44,16 +43,14 @@ export class TodolistComponent implements OnInit {
     this.router.navigate(['todolist/todolist/form'], {state: {id: id, mode: 'edit'}});
   }
 
-  showAlert(id: number, title: string): void {
-    this.dashboardComponent.deleteTodoId = id
-    this.dashboardComponent.todolistTitle = title
-    this.dashboardComponent.alert = true
+  delete(id: number) {
+    this.dashboardComponent.delete(id)
   }
 
-
-  getTodolists(id : number) {
-    this.todolists$ = this.todolistService.getTodolists().subscribe(result => this.todolists = result);
-    console.log('test2')
+  getItems(): void{
+    this.itemService.getItems(this.todolist.id.toString()).subscribe(data => {
+      this.items = data;
+    });
   }
 
 }

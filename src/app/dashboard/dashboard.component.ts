@@ -11,13 +11,9 @@ import {Observable, Subscription} from 'rxjs';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  alert: boolean = false;
-  deleteTodoId: number = 0
-  todolistTitle: string = '';
-
   todolists$: Observable<Todolist[]> = new Observable<Todolist[]>();
-  deleteTodolist$: Subscription = new Subscription();
   private errorMessage: any;
+  deleteTodolist$: Subscription = new Subscription();
 
   constructor(private todolistService: TodolistService) { }
 
@@ -25,21 +21,19 @@ export class DashboardComponent implements OnInit {
     this.getTodolists()
   }
 
-  hideAlert(): void {
-    this.alert = false
+  getTodolists() {
+    this.todolists$ = this.todolistService.getTodolists();
   }
 
-  delete() {
-    this.deleteTodolist$ = this.todolistService.deleteTodolist(this.deleteTodoId).subscribe(result => {
+  delete(id: number) {
+    this.deleteTodolist$ = this.todolistService.deleteTodolist(id).subscribe(result => {
       //all went well
       this.getTodolists();
-      console.log('test')
     }, error => {
       //error
       this.errorMessage = error.message;
     });
   }
-  getTodolists() {
-    this.todolists$ = this.todolistService.getTodolists();
-  }
+
+
 }

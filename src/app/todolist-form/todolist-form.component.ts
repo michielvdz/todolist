@@ -17,7 +17,7 @@ export class TodolistFormComponent implements OnInit, OnDestroy {
 
   isSubmitted: boolean = false;
   errorMessage: string = '';
-  nameChangeMessage: string = '';
+
 
   todolist$: Subscription = new Subscription();
   posttodolist$: Subscription = new Subscription();

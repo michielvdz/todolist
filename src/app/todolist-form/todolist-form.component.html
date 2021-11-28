@@ -6,11 +6,11 @@
 </div>
 <form (ngSubmit)="onSubmit()" [formGroup]="todolistForm">
   <div class="form-group">
-    <label for="title">Titel:</label>
+    <label for="title">Title:</label>
     <input type="text" class="form-control" id="title" name="title" placeholder="Titel" formControlName="title" minlength="2">
   </div>
   <div class="form-group">
-    <p>Keur:</p>
+    <p>Color:</p>
     <input type="radio" class="btn-check" name="color" value="primary" formControlName="color" id="primary" autocomplete="off" />
     <label class="btn btn-primary" for="primary">{{todolistForm.value.title}}</label>
 
@@ -34,10 +34,10 @@
 
   </div>
   <div class="modal-footer">
-    <button type="submit" class="btn btn-success" *ngIf="isAdd" [disabled]="!todolistForm.valid">Voeg toe</button>
-    <button type="submit" class="btn btn-success" *ngIf="isEdit" [disabled]="!todolistForm.valid">Opslaan</button>
+    <button type="submit" class="btn btn-success" *ngIf="isAdd" [disabled]="!todolistForm.valid">Add</button>
+    <button type="submit" class="btn btn-success" *ngIf="isEdit" [disabled]="!todolistForm.valid">Save</button>
     <a routerLink="">
-      <button class="btn btn-grey">Terug</button>
+      <button class="btn btn-grey">Back</button>
     </a>
   </div>
 </form>
