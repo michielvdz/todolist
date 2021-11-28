@@ -4,6 +4,21 @@
 //reboot
 @import "reboot";
 
-@import "node_modules/bootstrap/scss/bootstrap";
+//
+//@import "node_modules/bootstrap/scss/bootstrap";
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+
 
 //custom code/partials
+.card, tbody>tr, .pointer{
+  cursor: pointer;
+}
+
+
+
+.schaduuw {
+  //background-color: red;
+
+  background: linear-gradient(to top, rgba(191, 191, 191, 1), rgba(255,255,255, 1) 50%);
+}
+

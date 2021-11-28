@@ -1,5 +1,8 @@
-<h1>Todolijsten:</h1>
-<div class="row">
-  <app-todolist class="col-sm-12 col-md-12, col-lg-6, col-xl-4  d-flex align-items-stretch"
-                *ngFor="let todolist of (todolists$ | async)" [todolist]="todolist"></app-todolist>
+<h1>Todolists:</h1>
+<div class="row  card-deck">
+  <app-todolist class="col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex"
+                *ngFor="let todolist of (todolists$ | async)" [todolist]="todolist">
+  </app-todolist>
+
 </div>
+

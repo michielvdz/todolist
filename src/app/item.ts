@@ -1,8 +1,9 @@
 export interface Item {
+  id: number;
   todolistId: number;
   title: string;
   description: string;
-  date: Date;
-  statusId: number;
+  date: string;
+  done: boolean;
   order: number;
 }
