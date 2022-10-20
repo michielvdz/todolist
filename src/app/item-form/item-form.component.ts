@@ -79,6 +79,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
   async getItem(){
     if (this.itemId != null && this.itemId > 0) {
       this.item$ = await this.itemService.getItemById(this.itemId).subscribe(result => {
+        console.log(result)
         this.itemForm.setValue({
           title: result.title,
           description: result.description,
