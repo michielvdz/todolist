@@ -50,7 +50,7 @@
       "date": "2021-12-12",
       "todolistId": 3,
       "done": 0,
-      "order": 3,
+      "order": 2,
       "id": 6
     },
     {
@@ -59,7 +59,7 @@
       "date": "2021-12-31",
       "todolistId": 3,
       "done": 1,
-      "order": 0,
+      "order": 3,
       "id": 9
     },
     {
@@ -68,7 +68,7 @@
       "date": "2021-12-02",
       "todolistId": 3,
       "done": true,
-      "order": 2,
+      "order": 1,
       "id": 10
     },
     {
@@ -86,7 +86,7 @@
       "date": "2021-12-03",
       "todolistId": 3,
       "done": 0,
-      "order": 1,
+      "order": 0,
       "id": 12
     }
   ]
